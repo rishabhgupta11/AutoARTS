@@ -1,0 +1,332 @@
+body{
+    background-color: white;
+    color: #212a2f;
+    font-family: 'Didact Gothic';
+}
+
+hr{
+    background-color: #f5f5f5;
+    margin: 0px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  margin-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #212a2f;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: black;
+}
+
+.openbtn {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+}
+
+.openbtn:focus{
+    outline:none;
+}
+
+.sidebarBottomMenu{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 100px;
+}
+
+.sidebarBottomMenu > a{
+    border: 2px solid black;
+    border-radius: 0.25rem;
+}
+
+.sidebarBottomMenu > a:hover{
+    background-color: white;
+    color: black;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar{
+      padding-top: 15px;
+  }
+  .sidebar a{
+      font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+    .navbar-burger-menu-div{
+        display: none;
+    }
+}
+
+#header{
+    top: 0;
+    z-index: 9999;
+    position: fixed;
+    padding: 0px;
+    background-color: white;
+}
+
+.navbar{
+    -webkit-box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.5);
+}
+
+nav div a{
+    font-family: "Didact Gothic";
+    text-decoration: none !important;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+    color: #212a2f;
+}
+
+nav div a:hover{
+    color: black;
+}
+
+.nav-link {
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+
+.headerOption{
+    font-size: 13px;
+    font-family: 'Didact Gothic';
+    letter-spacing: 1px;
+    padding-right: 200px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+}
+
+.navbar-brand{
+    justify-content: center;
+    margin-right:0px;
+}
+
+.nav-item{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hero{
+    margin-top: 60px;
+    background-color: #212a2f;
+    height: 100vh;
+}
+
+.hero-content{
+    color: white;
+}
+
+.hero-content-text{
+    padding-top: 40vh;
+}
+
+.hero-content-image{
+    padding-top: 20vh;
+    display: flex;
+    justify-content: center;
+}
+
+.home-description{
+    height: 100vh;
+}
+
+#footer{
+    -webkit-box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.75);
+    position: relative;
+    bottom:0;
+}
+
+footer{
+    padding: 10px 0;
+    background-color: white;
+    color: #212a2f;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-heading{
+    margin-top: 30px;
+    font-family: 'Didact Gothic';
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: #212a2f;
+}
+
+.footer-text{
+    font-family: 'Didact Gothic';
+    color: black;
+    text-decoration:none !important;
+}
+
+.footer-text > div > a{
+    color: #212a2f;
+    text-decoration:none;
+}
+
+.footer-text > div > a:hover {
+    color: black;
+    text-decoration: underline; 
+    cursor: pointer;  
+}
+
+.footer-text > div > a > img{
+    margin-top: 30px;
+}
+
+#banner-signup{
+    background-color: white;
+}
+
+#Signup{
+    font-family: 'Didact Gothic';
+    color: black;
+    position:relative;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin-top: 60px;
+}
+
+.forgot-password{
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
+
+.forgot-password > a{
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family:'Didact Gothic';
+    cursor: pointer;
+    color: black;
+}
+.forgot-password > a:hover{
+    color: blue;
+}
+
+.create-acc{
+    color: black;
+    font-size:20px;
+    font-weight:900;
+    font-family:"Didact Gothic";
+    letter-spacing:3px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.or-login-with{
+    display: flex;
+    justify-content:space-around;
+}
+
+.button1 {
+  display: inline-block;
+  border-radius: 2px;
+  background-color: black;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 3px;
+  padding: 20px;
+  width: 98%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-right: 25px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.otpInput{
+    padding: 5px;
+    font-size: 14px;
+    width: 100%;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.otpInput:focus{
+    outline: none;
+}
+
+.button10 {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Didact Gothic';
+}
+.button105 {
+    background-color: black;
+    color: #f5f5f5;
+    border: 2px solid black;
+}
+
+.button105:hover {
+    background-color: #f5f5f5;
+    color: black;
+    border: 2px solid black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+@media only screen and (max-width:1024px){
+    .account-button-desktop{
+        display: none;
+    }
+}
