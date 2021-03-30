@@ -2,7 +2,7 @@
     require("../includes/connect.php");
     include("../includes/fetch_css.php");
     require_once "../vendor/autoload.php";
-    include("../includes/mail_config.php");
+    include("../includes/aws_ses_config.php");
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
@@ -30,16 +30,19 @@ if(isset($_SESSION['reset_password']))
                 date_default_timezone_set("Asia/Kolkata");
                 $date = date("Y/m/d");
                 $time = date("h:i:sa");
+
                 $mail = new PHPMailer(true);
                 $mail->SMTPDebug = 0;       
-                $mail->isSMTP();                             
-                $mail->Host = "smtp.hostinger.in";
-                $mail->SMTPAuth = true;             
-                $mail->Username = $mail_username;                 
-                $mail->Password = $mail_password;  
-                $mail->Port = 587;  
-                $mail->From = $mail_username;
-                $mail->FromName = "AutoARTS";
+                $mail->isSMTP();
+                          
+                $mail->setFrom($sender, $senderName);
+                $mail->Username   = $usernameSmtp;
+                $mail->Password   = $passwordSmtp;
+                $mail->Host       = $host;
+                $mail->Port       = $port; 
+                $mail->SMTPAuth   = true;
+                $mail->SMTPSecure = 'tls';
+
                 $mail->addAddress("$email", "$name");
                 $mail->isHTML(true);
                 $mail->Subject = "Password Reset Successful";
