@@ -18,7 +18,11 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div id="banner-signup-1"></div>
+        <?php
+            include("../includes/header.php");
+        ?>
+        
+        <div id="banner-signup">
             <div class="container">
                 <div id="Signup">
                     <div class="row">
@@ -26,23 +30,23 @@
                         if(!isset($_SESSION['email']))
                         {
                         ?>
-                        <div class="col-md offset-md-1 login-card">
+                        <div class="col-md offset-md-1">
                             <p class="create-acc" style="margin-bottom:20px;">LOGIN</p>
                             <br>
-                            <form autocomplete="off" method="post" action="../includes/server.php">
+                            <form method="post" action="../includes/server.php">
                                 <div class="form-group">
-                                    <input type="email"  class="form-control login-field" name="email" id="email" placeholder="Email" required>
+                                    <label>EMAIL</label>
+                                    <input type="email"  class="form-control" name="email" id="email" required>
                                 </div>
                                 <div class="form-group form-password">
-                                    <input type="password"  class="form-control login-field" name="password" id="password" placeholder="Password" required>
+                                    <label>PASSWORD</label>
+                                    <input type="password"  class="form-control" name="password" id="password" required>
                                 </div>
-                                <div style="margin-bottom:20px;">
+                                <div style="margin-bottom:15px;">
                                     <a class="forgot-password" data-toggle="modal" data-target="#exampleModal">Forgot Password</a>
                                 </div>
                                 <div class="form-group">
-                                    <center>
-                                        <button type="submit" class="button-login2" style="vertical-align:middle" id="login_user" name="login_user"><span>SIGN IN </span></button>
-                                    </center>
+                                    <button type="submit" class="button1" style="vertical-align:middle" id="login_user" name="login_user"><span>SIGN IN </span></button>
                                 </div>
                             </form>
                             <div class="modal fade" style="margin-top:60px;" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -57,18 +61,18 @@
                                         <div class="modal-body">
                                             <form method="POST" action="../home/forgot_password.php">
                                                 <div class="form-group">
-                                                    <input type="email"  class="form-control login-field" name="forgot_email" id="forgot_email" required>
+                                                    <input type="email"  class="form-control" name="forgot_email" id="forgot_email" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <center>
-                                                        <button type="submit" class="button-login2" style="vertical-align:middle" id="search_email" name="search_email"><span> SEND OTP </span></button>
-                                                    </center>
+                                                    <button type="submit" class="button1" style="vertical-align:middle" id="search_email" name="search_email"><span> SEND OTP </span></button>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <br>
+                            <p class="create-acc" style="margin-top:20px;margin-bottom:10px;">OR LOGIN WITH</p>
                             <br>
                             <div class="container or-login-with">
                             <?php
@@ -81,29 +85,30 @@
                             </div>
                             <br>
                         </div>
-
-                        <div class="col-md offset-md-3 login-card">
+                        <div class="col-md offset-md-3">
                             <p class="create-acc" style="margin-bottom:20px;">CREATE AN ACCOUNT</p>
                             <br>
-                            <form autocomplete="off" method="post" action="../includes/server.php">
+                            <form method="post" action="../includes/server.php">
                                 <div class="form-group">
-                                    <input type="text"  class="form-control login-field" id="name" name="name" placeholder="Name" required>
+                                    <label>NAME</label>
+                                    <input type="text"  class="form-control" id="name" name="name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email"  class="form-control login-field" id="email" name="email" placeholder="Email" required>
+                                    <label>EMAIL</label>
+                                    <input type="email"  class="form-control" id="email" name="email" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password"  minlength="6" maxlength="30" class="form-control login-field" id="password_1" name="password_1" placeholder="Password" required>
+                                    <label>PASSWORD</label>
+                                    <input type="password"  minlength="6" maxlength="30" class="form-control" id="password_1" name="password_1" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password"  minlength="6" maxlength="30" class="form-control login-field" id="password_2" name="password_2" placeholder="Confirm Password" required>
+                                    <label>CONFIRM PASSWORD</label>
+                                    <input type="password"  minlength="6" maxlength="30" class="form-control" id="password_2" name="password_2" required>
                                 </div>
                                 <br>
                                 <br>
                                 <div class="form-group">
-                                    <center>
-                                        <button type="submit" class="button-login2" style="vertical-align:middle" id="reg_user" name="reg_user"><span>REGISTER </span></button>
-                                    </center>
+                                    <button type="submit" class="button1" style="vertical-align:middle" id="reg_user" name="reg_user"><span>REGISTER </span></button>
                                 </div>
                             </form>
                         </div>
@@ -121,9 +126,20 @@
                         }
                         ?>
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                 </div>
-            </div>
-             
+            </div>  
+        </div>
+        
+        <div id="footer">
+        <?php
+        include("../includes/footer.php");
+        ?>
+        </div>     
     </body>
 </html>
 

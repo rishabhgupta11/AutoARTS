@@ -202,36 +202,65 @@ footer{
 #banner-signup{
     background-color: white;
 }
+#banner-signup-1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../images/login-background.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 #Signup{
     font-family: 'Didact Gothic';
     color: black;
     position:relative;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    margin-top: 60px;
+    position: absolute;
+    top: 47%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 65vw;
+}
+
+.login-card{
+    background-color: white;
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    border-radius: 25px;
+}
+
+.login-field{
+    color: #212a2f;
+}
+.login-field:focus{
+    color: #212a2f;
+}
+.login-field::placeholder{
+    color: #b0b4c8;
+    opacity: 1;
+}
+
+.login-form-label{
+    color: #b0b4c8;
 }
 
 .forgot-password{
-    padding-left: 5px;
-    margin-bottom: 20px;
-}
-
-.forgot-password > a{
     font-size: 12px;
-    font-weight: bold;
     text-decoration: underline;
     font-family:'Didact Gothic';
+    font-weight: bold;
     cursor: pointer;
-    color: black;
+    color: #212a2f;
+    padding-left: 5px;
 }
-.forgot-password > a:hover{
-    color: blue;
+.forgot-password:hover{
+    color: black;
 }
 
 .create-acc{
     color: black;
-    font-size:20px;
+    font-size:23px;
     font-weight:900;
     font-family:"Didact Gothic";
     letter-spacing:3px;
@@ -245,29 +274,70 @@ footer{
 }
 
 .button1 {
+    display: inline-block;
+    border-radius: 2px;
+    background-color: black;
+    border: none;
+    color: #f5f5f5;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 20px;
+    width: 98%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button1 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button1 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button1:hover span {
+    padding-right: 25px;
+  }
+  
+  .button1:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.button-login2 {
   display: inline-block;
-  border-radius: 2px;
-  background-color: black;
+  border-radius: 50px;
+  background-color: #212a2f;
   border: none;
-  color: white;
+  color: #f5f5f5;
   text-align: center;
   font-size: 14px;
   letter-spacing: 3px;
-  padding: 20px;
+  padding: 13px;
   width: 98%;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
 }
 
-.button1 span {
+.button-login2 span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.button1 span:after {
+.button-login2 span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -276,11 +346,11 @@ footer{
   transition: 0.5s;
 }
 
-.button1:hover span {
+.button-login2:hover span {
   padding-right: 25px;
 }
 
-.button1:hover span:after {
+.button-login2:hover span:after {
   opacity: 1;
   right: 0;
 }
