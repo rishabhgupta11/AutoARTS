@@ -208,12 +208,12 @@ footer{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 0;
 }
 
 #Signup{
     font-family: 'Didact Gothic';
     color: black;
-    position:relative;
     position: absolute;
     top: 47%;
     left: 48%;
@@ -243,6 +243,10 @@ footer{
 
 .login-form-label{
     color: #b0b4c8;
+}
+
+.modal-backdrop{
+    z-index: 1;
 }
 
 .forgot-password{
