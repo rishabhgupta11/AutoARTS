@@ -48,7 +48,7 @@ if(isset($_GET["code"]))
             $query = "INSERT INTO user (Name, Email) VALUES('$name', '$emailid')";
             mysqli_query($con, $query);
             $_SESSION['email'] = $emailid;
-            header('location: ../home/manage.php');
+            header('location: ../home/addRequirements.php');
         }
         else
         {

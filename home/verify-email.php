@@ -96,7 +96,7 @@
                 {
                 ?>
                     <script>
-                        location.href = "../home/manage.php";
+                        location.href = "../home/addRequirements.php";
                     </script>
                 <?php
                 }

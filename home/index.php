@@ -27,6 +27,8 @@
                         <h4><b>Automated Applicant Ranking and Tracking System</b></h4>
                         <br>
                         <h5>A web application designed for companies to simplify the recruitment process</h5>
+                        <br>
+                        <h6 class="getStartedButton" onclick="location.href='../home/manage.php'">GET STARTED</h6>
                     </div>
                     <div class="col-xs-12 col-md-4 hero-content-image">
                         <img src="../images/hero-image.jpg" width="300px">

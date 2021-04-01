@@ -47,7 +47,7 @@ if(isset($_GET['code']))
         $query = "INSERT INTO user (Name, Email, Type) VALUES('$name', '$emailid', 'Student')";
         mysqli_query($con, $query);
         $_SESSION['email'] = $emailid;
-        header('location: ../home/manage.php');
+        header('location: ../home/addRequirements.php');
     }
     else
     {
@@ -58,15 +58,10 @@ if(isset($_GET['code']))
 }
 else
 {
- // Get login url
-    $facebook_permissions = ['email']; // Optional permissions
+    $facebook_permissions = ['email'];
 
     $facebook_login_url = $facebook_helper->getLoginUrl('http://localhost/AutoARTS/includes/facebook_signin.php', $facebook_permissions);
     
-    // Render Facebook login button
     $facebook_login_but = '<a href="'.$facebook_login_url.'"><img src="../images/facebook-signin.png" style="width:40px;"></a>';
 }
-
-
-
 ?>
