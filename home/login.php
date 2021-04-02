@@ -87,7 +87,7 @@
                             <br>
                             <form autocomplete="off" method="post" action="../includes/server.php">
                                 <div class="form-group">
-                                    <input type="text"  class="form-control login-field" id="name" name="name" placeholder="Name" required>
+                                    <input type="text"  class="form-control login-field" id="name" name="name" placeholder="Company Name" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="email"  class="form-control login-field" id="email" name="email" placeholder="Email" required>
