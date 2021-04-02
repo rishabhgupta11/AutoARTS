@@ -1,8 +1,6 @@
 <?php
     include("../includes/fetch_css.php");
     include("../includes/connect.php");
-
-    $number = 1;
 ?>
 
 <html>
@@ -109,7 +107,7 @@
                 <br>
                 <div class="form-group">
                     <center>
-                        <button type="submit" class="button-login2" style="vertical-align:middle;width:30%;" id="reg_user" name="reg_user"><span>PROCEED </span></button>
+                        <button type="submit" class="button-login2" style="vertical-align:middle;width:30%;" id="addReq" name="addReq"><span>PROCEED </span></button>
                     </center>
                 </div>
             </form> 
