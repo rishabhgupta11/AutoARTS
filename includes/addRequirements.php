@@ -3,57 +3,83 @@
 include("../includes/connect.php");
 include("../includes/connect2.php");
 
-if(isset($_POST['addReq'])){
-    $duration = $_POST['duration'];
-    $skillsLanguages = "";
-    $totalLanguages = $_SESSION['languageNumber'];
-    $comma = ",";
-    for($i = 1; $i<=$totalLanguages; $i++ ){
-        $x = strval($i);
-        $skillsLanguages .= $_POST['skillsLanguage'.$x];
-        if( $i != $totalLanguages ){
-            $skillsLanguages .= $comma;
+$emailid = $_SESSION['email'];
+
+$query1 = "SELECT * FROM requirements WHERE Email='$emailid'";
+$result1 = mysqli_query($con, $query1) or die(mysqli_error($con));
+
+if(mysqli_num_rows($result1) == 0) 
+{
+    if(isset($_POST['addReq']) && isset($_SESSION['email']))
+    {
+        $duration = $_POST['duration'];
+
+        $comma = ",";
+
+        $skillsLanguages = "";
+        $totalLanguages = $_SESSION['languageNumber'];
+        for($i=1; $i<=$totalLanguages; $i++)
+        {
+            $num = strval($i);
+            if($_POST['skillsLanguage'.$num] != "-- Select Language --")
+            {
+                $skillsLanguages .= $_POST['skillsLanguage'.$num];
+                if( $i != $totalLanguages )
+                {
+                    $skillsLanguages .= $comma;
+                }
+            }
         }
-    }
 
-    $skillsApp = "";
-    $totalApps = $_SESSION['appNumber'];
-    for($i = 1; $i<=$totalApps; $i++ ){
-        $x = strval($i);
-        $skillsApp .= $_POST['skillsApp'.$x];
-        if( $i != $skillsApp ){
-            $skillsApp .= $comma;
+        $skillsApp = "";
+        $totalApps = $_SESSION['appNumber'];
+        for($i=1; $i<=$totalApps; $i++)
+        {
+            $num = strval($i);
+            if($_POST['skillsApp'.$num] != "-- Select Technology --")
+            {
+                $skillsApp .= $_POST['skillsApp'.$num];
+                if( $i != $totalApps )
+                {
+                    $skillsApp .= $comma;
+                }
+            }
         }
-    }
 
-    $skillsMisc = "";
-    $totalMisc = $_SESSION['miscNumber'];
-    for($i = 1; $i<=$totalMisc; $i++ ){
-        $x = strval($i);
-        $skillsMisc .= $_POST['skillsMisc'.$x];
-        if( $i != $totalMisc ){
-            $skillsMisc .= $comma;
+        $skillsMisc = "";
+        $totalMisc = $_SESSION['miscNumber'];
+        for($i=1; $i<=$totalMisc; $i++)
+        {
+            $num = strval($i);
+            if($_POST['skillsMisc'.$num] != "-- Select Skill --")
+            {
+                $skillsMisc .= $_POST['skillsMisc'.$num];
+                if($i != $totalMisc)
+                {
+                    $skillsMisc .= $comma;
+                }
+            }
         }
+        
+        $percentage10 = $_POST['percentage10'];
+        $percentage12 = $_POST['percentage12'];
+        $cgpa = $_POST['cgpa'];
+
+        
+        
+
+        $query = "INSERT INTO requirements (Email, Duration, Languages, Applications, Miscellaneous, Percentage10, Percentage12, CGPA) 
+                    VALUES ('$emailid', '$duration', '$skillsLanguages', '$skillsApp', '$skillsMisc', '$percentage10', '$percentage12', '$cgpa')";
+        mysqli_query($con, $query) or die(mysqli_error($con));
+
+        header('location: ../home/manage.php');
     }
-    
-    $percentage10 = $_POST['percentage10'];
-    $percentage12 = $_POST['percentage12'];
-    $cgpa = $_POST['cgpa'];
-
-    $emailid=  $_SESSION['email'];
-
-
-    $query = "INSERT INTO requirements (Email, Duration, Languages, Applications, Miscellaneous, Percentage10, Percentage12, CGPA )
-              VALUES( '$emailid','$duration','$skillsLanguages','$skillsApp','$skillsMisc','$percentage10','$percentage12','$cgpa')";
-    
-    mysqli_query($con, $query);
-
-
-
-
-    
-
-
+}
+else
+{
+    echo "<center>You have already added your requirements.<center>";
+    sleep(3);
+    header('location: ../home/manage.php');
 }
 
 ?>

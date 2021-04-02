@@ -1,5 +1,3 @@
-
-
 <?php
     require("../includes/connect.php");
     include("../includes/google_signin.php");
