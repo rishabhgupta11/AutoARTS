@@ -1,7 +1,8 @@
 {
     "require": {
+        "aws/aws-sdk-php": "^3.176",
+        "google/apiclient": "2.7",
         "facebook/graph-sdk": "^5.7",
-        "google/apiclient": "2.0",
-        "phpmailer/phpmailer": "^6.3"
+        "phpmailer/phpmailer": "^6.4"
     }
 }
