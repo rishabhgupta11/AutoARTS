@@ -292,7 +292,7 @@ if(isset($_SESSION['email']))
     }
     else
     {
-        header('location: ../home/manage.php');
+        header('location: ../home/upload.php');
     }
 }
 else

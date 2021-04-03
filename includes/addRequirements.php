@@ -72,14 +72,14 @@ if(mysqli_num_rows($result1) == 0)
                     VALUES ('$emailid', '$duration', '$skillsLanguages', '$skillsApp', '$skillsMisc', '$percentage10', '$percentage12', '$cgpa')";
         mysqli_query($con, $query) or die(mysqli_error($con));
 
-        header('location: ../home/manage.php');
+        header('location: ../home/upload.php');
     }
 }
 else
 {
     echo "<center>You have already added your requirements.<center>";
     sleep(3);
-    header('location: ../home/manage.php');
+    header('location: ../home/upload.php');
 }
 
 ?>

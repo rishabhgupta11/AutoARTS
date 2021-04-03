@@ -437,3 +437,40 @@ footer{
     cursor: pointer;
     padding-left: 30px;
 }
+
+.manageBody{
+    margin-top: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: white;
+}
+
+.icons-div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon{
+    background-color: #212a2f;
+    padding: 30px;
+    border-radius: 100px;
+}
+
+.custom-file-input{
+    height: 350px;
+    cursor: pointer;
+}
+
+.custom-file-label{
+    height: 200px;
+    text-align: center;
+    background-color: #e1e4e7;
+    padding-top: 70px;
+}
+
+.custom-file-label::after{
+    display: none;
+}
+

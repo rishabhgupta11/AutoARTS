@@ -77,7 +77,7 @@
         
         <div class="container-fluid text-center" id="banner-signup" style="margin-top:60px;padding-top:60px;">
             <h2 style="margin-top:50px;text-decoration:underline;margin-bottom:75px;color:black;">Enter OTP</h2>
-            <form method="POST" action="">
+            <form method="POST" action="" autocomplete="off">
                 <div class="form-group" style="display:flex; justify-content:center;">
                     <input class="otpInput" style="font-weight:700;letter-spacing:20px;width:185px;" type="tel" minlength="6" maxlength="6" name="OTP" id="OTP" required>
                 </div>

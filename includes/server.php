@@ -128,7 +128,7 @@ if (isset($_REQUEST['login_user']))
         $_SESSION['email'] = $email;
     ?>
         <script>
-            location.href = "../home/manage.php";
+            location.href = "../home/upload.php";
         </script>
     <?php
     }

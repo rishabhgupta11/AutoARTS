@@ -25,7 +25,7 @@
             {
             ?>
                 <div class="nav-item" style="margin-top:8px;">
-                    <a class="nav-link headerOption" href="../home/manage.php">MY ACCOUNT</a>
+                    <a class="nav-link headerOption" href="../home/upload.php">MY ACCOUNT</a>
                 </div>
             <?php
             }
@@ -88,7 +88,7 @@
                         {
                         ?>
                         <li class="nav-item">
-                            <a class="nav-link headerOption" href="../home/manage.php">MY ACCOUNT</a>
+                            <a class="nav-link headerOption" href="../home/upload.php">MY ACCOUNT</a>
                         </li>
                         <?php
                         }
