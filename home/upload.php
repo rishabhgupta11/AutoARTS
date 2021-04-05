@@ -21,6 +21,8 @@
         ?>
 
         <div class="manageBody">
+            <h3 style="text-decoration: underline;">Navigate</h3>
+            <br>
             <div class="container-fluid icons-div">
                 <div class="icon">
                     <a href="../home/upload.php" title="Upload Resumes">
