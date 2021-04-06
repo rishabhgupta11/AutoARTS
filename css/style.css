@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
   font-family: 'Didact Gothic' !important;
 	overflow-x: hidden;
@@ -61,4 +62,71 @@ h3 {
     font-size: 3rem;
     color: white;
     white-space: nowrap;
+=======
+body{
+    font-family: 'Roboto' !important;
+	overflow-x: hidden;
+}
+.back_img{
+    background:linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),url("img.jpeg");
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-position: center;
+  background-attachment: scroll;
+    width: fit-content;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+  
+}
+.icon_box{
+    position: relative;
+    padding-left: 75px;
+    width: 50px;
+    height: 50;
+
+}
+.feat_box{
+    padding-left:70px;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+  }
+  
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+   @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+.fontt{
+    font-size: 1.5rem;
+    color: white;
+    padding-left: 100px;
+}
+
+.box{
+    height: 50px;
+}
+
+h3 {
+    padding-left: 200px;
+    padding-top: 100px;
+    margin: 0;
+    font-size: 3rem;
+    color: white;
+    white-space: nowrap;
+>>>>>>> cac54e50f10ab84f570b35eb65737a72e6f4cf08
   }
