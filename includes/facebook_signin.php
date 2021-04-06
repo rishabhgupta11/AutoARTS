@@ -52,7 +52,7 @@ if(isset($_GET['code']))
     else
     {
         $_SESSION['email'] = $emailid;
-        header('location: ../home/manage.php');
+        header('location: ../home/upload.php');
     }
  
 }

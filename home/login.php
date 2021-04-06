@@ -114,7 +114,7 @@
                         ?>
                             <div class="offset-md-4 col-md-4 col-xs-12">
                                 <center>
-                                    <h3 style="margin:200px 0px 200px 0px;">You are already signed in!</h3>
+                                    <h3 style="color:white; margin:200px 0px 200px 0px;">You are already signed in!</h3>
                                 </center>
                             </div>
                         <?php

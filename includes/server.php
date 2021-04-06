@@ -54,28 +54,35 @@ if (isset($_REQUEST['reg_user']))
             try 
             {
                 $mail->send();
-                $_SESSION['prov_email'] = $email;
-                $_SESSION['prov_name'] = $name;
-                $password = md5($password_1);
-                $_SESSION['prov_password'] = $password;
-                $_SESSION['otp'] = $otp;
-            ?>
-                <script>
-                    if(confirm("An OTP has been sent to your e-mail successfully!"))
-                    {
-                        location.href = "../home/verify-email.php";
-                    }
-                    else
-                    {
-                        location.href = "../home/verify-email.php";
-                    }
-                </script>
-            <?php   
-            } 
+            }
             catch (Exception $e) 
             {
                 echo "Mailer Error: " . $mail->ErrorInfo;
             }
+
+            $_SESSION["prov_email"] = $email;
+
+            $_SESSION["prov_name"] = $name;
+
+            $password = md5($password_1);
+
+            $_SESSION["prov_password"] = $password;
+
+            $_SESSION["otp"] = $otp;
+?>
+            <script>
+                if(confirm("An OTP has been sent to your e-mail successfully!"))
+                {
+                    location.href = "../home/verify-email.php";
+                }
+                else
+                {
+                    location.href = "../home/verify-email.php";
+                }
+            </script>
+            <?php   
+             
+            
         }
         else
         {
@@ -115,8 +122,8 @@ if (isset($_REQUEST['reg_user']))
 <?php
 if (isset($_REQUEST['login_user'])) 
 {
-    $email = mysqli_real_escape_string($con, $_REQUEST['email']);
-    $password1 = mysqli_real_escape_string($con, $_REQUEST['password']);
+    $email = mysqli_real_escape_string($con, $_REQUEST["email"]);
+    $password1 = mysqli_real_escape_string($con, $_REQUEST["password"]);
 
     
     $password = md5($password1);
@@ -125,7 +132,7 @@ if (isset($_REQUEST['login_user']))
     $row = mysqli_fetch_array($results);
     if(mysqli_num_rows($results) == 1) 
     {
-        $_SESSION['email'] = $email;
+        $_SESSION["email"] = $email;
     ?>
         <script>
             location.href = "../home/upload.php";
