@@ -3,6 +3,7 @@
         "aws/aws-sdk-php": "^3.176",
         "google/apiclient": "2.7",
         "facebook/graph-sdk": "^5.7",
-        "phpmailer/phpmailer": "^6.4"
+        "phpmailer/phpmailer": "^6.4",
+        "smalot/pdfparser": "^0.18.2"
     }
 }
