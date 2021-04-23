@@ -4,12 +4,10 @@ require("../includes/connect.php");
 
 $email = $_SESSION['email'];
 
-if(isset($_POST['uploadFiles']) && isset($_FILES['file']))
-{
+if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 	$total = count($_FILES['file']['name']);
 
-	for($num=0 ; $num < $total ; $num++)
-	{
+	for($num=0 ; $num < $total ; $num++){
 		$file_name = $_FILES['file']['name'][$num];   
 		$temp_file_location = $_FILES['file']['tmp_name'][$num]; 
 
@@ -67,10 +65,8 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file']))
 
 		//Saving Experience
 		$applicantExperience = 0;
-		for($i=0; $i<count($array); $i++)
-		{
-			if($array[$i] == "Duration:")
-			{
+		for($i=0; $i<count($array); $i++){
+			if($array[$i] == "Duration:"){
 				$applicantExperience += $array[$i+1];
 			}
 		}
@@ -285,7 +281,6 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file']))
 			if($array[$i] == "UI/UX"&& $array[$i+1] == "Design"){
 				$applicantMiscellaneous .= $array[$i].' '.$array[$i+1].',';
 			}
-			
 		}
 
 		$emailid = $_SESSION['email'];

@@ -21,7 +21,7 @@ if(mysqli_num_rows($result1) == 0)
         for($i=1; $i<=$totalLanguages; $i++)
         {
             $num = strval($i);
-            if($_POST['skillsLanguage'.$num] != "-- Select Language --")
+            if($_POST['skillsLanguage'.$num] != NULL)
             {
                 $skillsLanguages .= $_POST['skillsLanguage'.$num];
                 if( $i != $totalLanguages )
@@ -36,7 +36,7 @@ if(mysqli_num_rows($result1) == 0)
         for($i=1; $i<=$totalApps; $i++)
         {
             $num = strval($i);
-            if($_POST['skillsApp'.$num] != "-- Select Technology --")
+            if($_POST['skillsApp'.$num] != NULL)
             {
                 $skillsApp .= $_POST['skillsApp'.$num];
                 if( $i != $totalApps )
@@ -51,7 +51,7 @@ if(mysqli_num_rows($result1) == 0)
         for($i=1; $i<=$totalMisc; $i++)
         {
             $num = strval($i);
-            if($_POST['skillsMisc'.$num] != "-- Select Skill --")
+            if($_POST['skillsMisc'.$num] != NULL)
             {
                 $skillsMisc .= $_POST['skillsMisc'.$num];
                 if($i != $totalMisc)

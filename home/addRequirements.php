@@ -146,22 +146,18 @@ if(isset($_SESSION['email']))
                     function addNewLanguage()
                     {
 
-                        var values = ["-- Select Language --", "Assembly Language", "C/C++", "C#", "Dart", "Fortran", "Go", "Haskell", "HTML/CSS", "Java", "Javascript", "Kotlin", "MATLAB", "Objective-C", "Perl", "PHP", "Python", "R", "Ruby", "Rust", "Scala", "Swift", "SQL", "Typescript"];
+                        var values = ["Assembly Language", "C/C++", "C#", "Dart", "Fortran", "Go", "Haskell", "HTML/CSS", "Java", "Javascript", "Kotlin", "MATLAB", "Objective-C", "Perl", "PHP", "Python", "R", "Ruby", "Rust", "Scala", "Swift", "SQL", "Typescript"];
 
                         languageNumber++;
 
-                        var select = document.createElement("select");
-                        select.name = "skillsLanguage" + languageNumber;
-                        select.id = "skillsLanguage" + languageNumber;
-                        select.classList.add("form-control");
-                        select.style.width = "200px";
+                        var datalist = document.createElement("datalist");
+                        datalist.id = "skillsLanguage" + languageNumber;
 
                         for (const val of values) 
                         {
                             var option = document.createElement("option");
-                            option.value = val;
                             option.text = val;
-                            select.appendChild(option);
+                            datalist.appendChild(option);
                         }
 
                         var h6 = document.createElement("h6");
@@ -173,8 +169,18 @@ if(isset($_SESSION['email']))
 
                         var br = document.createElement("br");
 
+                        var langListID = "skillsLanguage" + languageNumber;
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        input.setAttribute('list', langListID);
+                        input.classList.add("form-control");
+                        input.style.width = "200px";
+                        input.placeholder = "Enter any Language";
+                        input.name = langListID;
+
                         div.appendChild(h6);
-                        div.appendChild(select);
+                        div.appendChild(input);
+                        div.appendChild(datalist);
 
                         document.getElementById("addNewLanguage").appendChild(div);
                         document.getElementById("addNewLanguage").appendChild(br);
@@ -193,22 +199,18 @@ if(isset($_SESSION['email']))
                     function addNewApplicationTechnology()
                     {
 
-                        var values = ["-- Select Technology --", "Amazon Web Services", "ASP.NET", "Android Native", "Django", "ExpressJS", "Flutter", "Flask", "Google Cloud Platform", "IBM Cloud", "iOS Native", "LAMP", "Laravel", "Microsoft Azure", "NodeJS", "Oracle", "React", "React Native", "Spring", "VMWare", "WAMP", "Xamarin", "XAMPP"];
+                        var values = ["Amazon Web Services", "ASP.NET", "Android Native", "Django", "ExpressJS", "Flutter", "Flask", "Google Cloud Platform", "IBM Cloud", "iOS Native", "LAMP", "Laravel", "Microsoft Azure", "NodeJS", "Oracle", "React", "React Native", "Spring", "VMWare", "WAMP", "Xamarin", "XAMPP"];
 
                         appNumber++;
 
-                        var select = document.createElement("select");
-                        select.name = "skillsApp" + appNumber;
-                        select.id = "skillsApp" + appNumber;
-                        select.classList.add("form-control");
-                        select.style.width = "200px";
+                        var datalist = document.createElement("datalist");
+                        datalist.id = "skillsApp" + appNumber;
 
                         for (const val of values) 
                         {
                             var option = document.createElement("option");
-                            option.value = val;
                             option.text = val;
-                            select.appendChild(option);
+                            datalist.appendChild(option);
                         }
 
                         var h6 = document.createElement("h6");
@@ -220,8 +222,18 @@ if(isset($_SESSION['email']))
 
                         var br = document.createElement("br");
 
+                        var appListID = "skillsApp" + appNumber;
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        input.setAttribute('list', appListID);
+                        input.classList.add("form-control");
+                        input.style.width = "200px";
+                        input.placeholder = "Enter any Technology";
+                        input.name = appListID;
+
                         div.appendChild(h6);
-                        div.appendChild(select);
+                        div.appendChild(input);
+                        div.appendChild(datalist);
 
                         document.getElementById("addNewApplicationTechnology").appendChild(div);
                         document.getElementById("addNewApplicationTechnology").appendChild(br);
@@ -240,22 +252,18 @@ if(isset($_SESSION['email']))
                     function addNewMiscellaneous()
                     {
 
-                        var values = ["-- Select Skill --", "Linux", "MS Office Suite", "SDLC Models", "Search Engine Optimization", "Shell Script", "Systems Design", "UI/UX Design"];
+                        var values = ["Linux", "MS Office Suite", "SDLC Models", "Search Engine Optimization", "Shell Script", "Systems Design", "UI/UX Design"];
 
                         miscNumber++;
 
-                        var select = document.createElement("select");
-                        select.name = "skillsMisc" + miscNumber;
-                        select.id = "skillsMisc" + miscNumber;
-                        select.classList.add("form-control");
-                        select.style.width = "200px";
+                        var datalist = document.createElement("datalist");
+                        datalist.id = "skillsMisc" + miscNumber;
 
                         for (const val of values) 
                         {
                             var option = document.createElement("option");
-                            option.value = val;
                             option.text = val;
-                            select.appendChild(option);
+                            datalist.appendChild(option);
                         }
 
                         var h6 = document.createElement("h6");
@@ -267,8 +275,18 @@ if(isset($_SESSION['email']))
 
                         var br = document.createElement("br");
 
+                        var miscListID = "skillsMisc" + miscNumber;
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        input.setAttribute('list', miscListID);
+                        input.classList.add("form-control");
+                        input.style.width = "200px";
+                        input.placeholder = "Enter any Skill";
+                        input.name = miscListID;
+
                         div.appendChild(h6);
-                        div.appendChild(select);
+                        div.appendChild(input);
+                        div.appendChild(datalist);
 
                         document.getElementById("addNewMiscellaneous").appendChild(div);
                         document.getElementById("addNewMiscellaneous").appendChild(br);

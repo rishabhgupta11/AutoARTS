@@ -10,24 +10,17 @@ $pages  = $pdf->getPages();
 foreach ($pages as $page) {
     $a = $page->getText();
 }
-echo "$a";
 
 $array = explode(' ', $a);
 foreach($array as $key => $value)
 {
     $array[$key] = trim($value);
 }
-var_dump($array);
 
 $b = preg_grep("/github.com/", $array);
 $str = implode("/", $b);
-echo $str;
-
 $gitarray = explode('/', $str);
-var_dump($gitarray);
-
 $gituser = $gitarray[1];
-echo "<br><br>";
 echo $gituser;
 
 
@@ -81,18 +74,14 @@ for($i=0; $i<count($array); $i++){
 if($higherIdx < $seniorIdx){
     $b = preg_grep("/(\d)+%/", $array);
     $str = implode('', $b);
-    echo $str;
     $percentageArray = explode('%', $str);
-    var_dump($percentageArray);
     $percentage12 = $percentageArray[0];
     $percentage10 = $percentageArray[1];
 }
 if($seniorIdx < $higherIdx){
     $b = preg_grep("/(\d)+%/", $array);
     $str = implode('', $b);
-    echo $str;
     $percentageArray = explode('%', $str);
-    var_dump($percentageArray);
     $percentage10 = $percentageArray[0];
     $percentage12 = $percentageArray[1];
 }
@@ -109,4 +98,29 @@ $cgpa = explode("/", $cgpa);
 $applicantCGPA = $cgpa[0];
 echo "<br><br>";
 echo $applicantCGPA;
+
+
+ini_set('user_agent','Mozilla/4.0 (compatible; MSIE 6.0)');
+$api_json = file_get_contents('https://api.github.com/users/'.$gituser.'/repos', true);
+$api_data = json_decode($api_json);
+var_dump($api_data);
+echo "<br><br>";
+echo count($api_data);
+echo "<br>";
+$languages = array();
+for($i=0; $i<count($api_data); $i++){
+    if($api_data[$i]->{'language'} == NULL){
+        continue;
+    }
+    echo $api_data[$i]->{'language'};
+    if(!isset($languages[$api_data[$i]->{'language'}])){
+        $languages += array($api_data[$i]->{'language'} => 1);
+    }
+    else{
+        $languages[$api_data[$i]->{'language'}]++;
+    }
+    echo "<br>";
+}
+
+var_dump($languages);
 ?>
