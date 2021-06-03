@@ -132,12 +132,8 @@ if (isset($_REQUEST['login_user']))
     $row = mysqli_fetch_array($results);
     if(mysqli_num_rows($results) == 1) 
     {
-        $_SESSION["email"] = $email;
-    ?>
-        <script>
-            location.href = "../home/upload.php";
-        </script>
-    <?php
+        $_SESSION['email'] = $email;
+        header('location: ../home/upload.php');
     }
     else
     {

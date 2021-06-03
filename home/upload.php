@@ -1,5 +1,8 @@
 <?php
+    require("../includes/connect.php");
     include("../includes/fetch_css.php");
+    if(isset($_SESSION['email']))
+    {
 ?>
 
 <html>
@@ -96,3 +99,10 @@
     </body>
 </html>
 
+<?php
+}
+else
+{
+    header('location: ../home/login.php');
+}
+?>

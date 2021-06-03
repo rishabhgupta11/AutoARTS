@@ -110,7 +110,7 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 		$applicantCGPA = $cgpa[0];
 
 		//Saving Skills
-		$applicantLangauages = '';
+		$applicantLanguages = '';
 		$applicantApplications = '';
 		$applicantMiscellaneous = '';
 
@@ -119,70 +119,70 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 				$applicantLanguages .= $array[$i].' '.$array[$i+1].',';
 			}
 			if($array[$i] == "C/C++" || $array[$i] == "C++" || $array[$i] == "C"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "C#"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Dart"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Fortran"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Go" || $array[$i] == "Golang"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Haskell"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "HTML/CSS"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Java"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Javascript" || $array[$i] == "JavaScript"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Kotlin"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "MATLAB" || $array[$i] == "Matlab"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Objective-C" || $array[$i] == "Obj-C"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Perl"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "PHP"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Python"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "R"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Ruby"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Rust"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Scala"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Swift"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "SQL" || $array[$i] == "NoSQL"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 			if($array[$i] == "Typescript" || $array[$i] == "TypeScript"){
-				$applicantLangauages .= $array[$i].',';
+				$applicantLanguages .= $array[$i].',';
 			}
 
 
@@ -270,7 +270,7 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 				$applicantMiscellaneous .= $array[$i].',';
 			}
 			if($array[$i] == "Search" && $array[$i+1] == "Engine" && $array[$i+2] == "Optimization"){
-				$applicantApplications .= $array[$i].' '.$array[$i+1].' '.$array[$i+2].',';
+				$applicantMiscellaneous .= $array[$i].' '.$array[$i+1].' '.$array[$i+2].',';
 			}
 			if($array[$i] == "Shell" && $array[$i+1] == "Script"){
 				$applicantMiscellaneous .= $array[$i].' '.$array[$i+1].',';
@@ -282,10 +282,112 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 				$applicantMiscellaneous .= $array[$i].' '.$array[$i+1].',';
 			}
 		}
+		$applicantLanguages = explode(',', $applicantLanguages);
+		$applicantLanguages = array_flip($applicantLanguages);
+		$applicantLanguages = array_flip($applicantLanguages);
+		$applicantLanguages = array_values($applicantLanguages);
+		$applicantLanguages = implode(',', $applicantLanguages);
+
+		$applicantApplications = explode(',', $applicantApplications);
+		$applicantApplications = array_flip($applicantApplications);
+		$applicantApplications = array_flip($applicantApplications);
+		$applicantApplications = array_values($applicantApplications);
+		$applicantApplications = implode(',', $applicantApplications);
+
+		$applicantMiscellaneous = explode(',', $applicantMiscellaneous);
+		$applicantMiscellaneous = array_flip($applicantMiscellaneous);
+		$applicantMiscellaneous = array_flip($applicantMiscellaneous);
+		$applicantMiscellaneous = array_values($applicantMiscellaneous);
+		$applicantMiscellaneous = implode(',', $applicantMiscellaneous);
+
+		//Saving Number of Projects
+		ini_set('user_agent','Mozilla/4.0 (compatible; MSIE 6.0)');
+		$api_json = file_get_contents('https://api.github.com/users/'.$applicantGithubID.'/repos', true);
+		$api_data = json_decode($api_json);
+		$applicantProjects = count($api_data);
+
+		//Generate Score
+		$applicantScore = 0;
+		//For Projects
+		if($applicantProjects < 15){
+			$applicantScore += $applicantProjects * 1.5;
+		}
+		else{
+			if($applicantProjects >= 15){
+				$applicantScore += 30;
+			}
+		}
+		//For Experience
+		if($applicantExperience >= 1 && $applicantExperience <= 5){
+			$applicantScore += 6;
+		}
+		else{
+			if($applicantExperience >= 6 && $applicantExperience <= 12){
+				$applicantScore += 12;
+			}
+			else{
+				if($applicantExperience > 12){
+					$applicantScore += 20;
+				}
+			}
+		}
+		//For Education
+		if($applicantPercentage10 >= 65 && $applicantPercentage10 <= 85){
+			$applicantScore += 3;
+		}
+		else{
+			if($applicantPercentage10 > 85){
+				$applicantScore += 5;
+			}
+		}
+		if($applicantPercentage12 >= 65 && $applicantPercentage12 <= 85){
+			$applicantScore += 3;
+		}
+		else{
+			if($applicantPercentage12 > 85){
+				$applicantScore += 5;
+			}
+		}
+		if($applicantCGPA >= 6 && $applicantCGPA <= 8){
+			$applicantScore += 7;
+		}
+		else{
+			if($applicantCGPA > 8){
+				$applicantScore += 10;
+			}
+		}
+		//For Skills
+		$languageArray = count(explode(',', $applicantLanguages)) - 1;
+		$applicationArray = count(explode(',', $applicantApplications)) - 1;
+		$miscArray = count(explode(',', $applicantMiscellaneous)) - 1;
+		if($languageArray >= 1 && $languageArray <= 5){
+			$applicantScore += $languageArray * 1.5;
+		}
+		else{
+			if($languageArray > 5){
+				$applicantScore += 12;
+			}
+		}
+		if($applicationArray >= 1 && $applicationArray <= 3){
+			$applicantScore += $applicationArray * 2;
+		}
+		else{
+			if($applicationArray > 3){
+				$applicantScore += 10;
+			}
+		}
+		if($miscArray >= 1 && $miscArray <= 4){
+			$applicantScore += $miscArray;
+		}
+		else{
+			if($miscArray > 4){
+				$applicantScore += 8;
+			}
+		}
 
 		$emailid = $_SESSION['email'];
-		$query = "INSERT INTO applicants (Email, ApplicantName, ApplicantEmail, GithubID, SkillsLanguage, SkillsApplication, SkillsMisc, Experience, Percentage10, Percentage12, CGPA) 
-                    VALUES ('$emailid', '$applicantName', '$applicantEmail', '$applicantGithubID', '$applicantLangauages', '$applicantApplications', '$applicantMiscellaneous', '$applicantExperience', '$applicantPercentage10', '$applicantPercentage12', '$applicantCGPA')";
+		$query = "INSERT INTO applicants (Email, ApplicantName, ApplicantEmail, GithubID, SkillsLanguage, SkillsApplication, SkillsMisc, Experience, Percentage10, Percentage12, CGPA, Projects, Score) 
+                    VALUES ('$emailid', '$applicantName', '$applicantEmail', '$applicantGithubID', '$applicantLanguages', '$applicantApplications', '$applicantMiscellaneous', '$applicantExperience', '$applicantPercentage10', '$applicantPercentage12', '$applicantCGPA', '$applicantProjects', '$applicantScore')";
         mysqli_query($con, $query);
 	}
 }
