@@ -27,7 +27,7 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 		$result = $s3->putObject([
 			'Bucket' => $bucket,
 			'Key'    => $email."/".$file_name,
-			'SourceFile' => $temp_file_location			
+			'SourceFile' => $temp_file_location
 		]);
 
 		//Parse PDF
@@ -187,7 +187,7 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 
 
 			if($array[$i] == "Amazon" && $array[$i+1] == "Web" && $array[$i+2] == "Services"){
-				$applicantApplications .= $array[$i].' '.$array[$i+1].' '.$array[$i+2].',';
+				$applicantApplications .= 'AWS'.',';
 			}
 			if($array[$i] == "AWS"){
 				$applicantApplications .= $array[$i].',';
@@ -211,7 +211,7 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 				$applicantApplications .= $array[$i].',';
 			}
 			if($array[$i] == "Google" && $array[$i+1] == "Cloud" && $array[$i+2] == "Platform"){
-				$applicantApplications .= $array[$i].' '.$array[$i+1].' '.$array[$i+2].',';
+				$applicantApplications .= 'GCP'.',';
 			}
 			if($array[$i] == "GCP"){
 				$applicantApplications .= $array[$i].',';
@@ -246,7 +246,7 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 			if($array[$i] == "Spring"){
 				$applicantApplications .= $array[$i].',';
 			}
-			if($array[$i] == "VMware"){
+			if($array[$i] == "VMware" || $array[$i] == "VMWare"){
 				$applicantApplications .= $array[$i].',';
 			}
 			if($array[$i] == "Xamarin"){
@@ -270,7 +270,7 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 				$applicantMiscellaneous .= $array[$i].',';
 			}
 			if($array[$i] == "Search" && $array[$i+1] == "Engine" && $array[$i+2] == "Optimization"){
-				$applicantMiscellaneous .= $array[$i].' '.$array[$i+1].' '.$array[$i+2].',';
+				$applicantMiscellaneous .= 'SEO'.',';
 			}
 			if($array[$i] == "Shell" && $array[$i+1] == "Script"){
 				$applicantMiscellaneous .= $array[$i].' '.$array[$i+1].',';
@@ -386,8 +386,8 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 		}
 
 		$emailid = $_SESSION['email'];
-		$query = "INSERT INTO applicants (Email, ApplicantName, ApplicantEmail, GithubID, SkillsLanguage, SkillsApplication, SkillsMisc, Experience, Percentage10, Percentage12, CGPA, Projects, Score) 
-                    VALUES ('$emailid', '$applicantName', '$applicantEmail', '$applicantGithubID', '$applicantLanguages', '$applicantApplications', '$applicantMiscellaneous', '$applicantExperience', '$applicantPercentage10', '$applicantPercentage12', '$applicantCGPA', '$applicantProjects', '$applicantScore')";
+		$query = "INSERT INTO applicants (Email, FileName, ApplicantName, ApplicantEmail, GithubID, SkillsLanguage, SkillsApplication, SkillsMisc, Experience, Percentage10, Percentage12, CGPA, Projects, Score) 
+                    VALUES ('$emailid', '$file_name', '$applicantName', '$applicantEmail', '$applicantGithubID', '$applicantLanguages', '$applicantApplications', '$applicantMiscellaneous', '$applicantExperience', '$applicantPercentage10', '$applicantPercentage12', '$applicantCGPA', '$applicantProjects', '$applicantScore')";
         mysqli_query($con, $query);
 	}
 }
@@ -397,10 +397,10 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 <script>
 	if(confirm("Resume(s) Uploaded Successfully!"))
 	{
-		location.href = "../home/upload.php";
+		location.href = "../home/rank.php";
 	}
 	else
 	{
-		location.href = "../home/upload.php";
+		location.href = "../home/rank.php";
 	}
 </script>

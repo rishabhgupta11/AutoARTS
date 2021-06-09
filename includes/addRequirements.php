@@ -24,10 +24,7 @@ if(mysqli_num_rows($result1) == 0)
             if($_POST['skillsLanguage'.$num] != NULL)
             {
                 $skillsLanguages .= $_POST['skillsLanguage'.$num];
-                if( $i != $totalLanguages )
-                {
-                    $skillsLanguages .= $comma;
-                }
+                $skillsLanguages .= $comma;
             }
         }
 
@@ -39,10 +36,7 @@ if(mysqli_num_rows($result1) == 0)
             if($_POST['skillsApp'.$num] != NULL)
             {
                 $skillsApp .= $_POST['skillsApp'.$num];
-                if( $i != $totalApps )
-                {
-                    $skillsApp .= $comma;
-                }
+                $skillsApp .= $comma;
             }
         }
 
@@ -54,10 +48,7 @@ if(mysqli_num_rows($result1) == 0)
             if($_POST['skillsMisc'.$num] != NULL)
             {
                 $skillsMisc .= $_POST['skillsMisc'.$num];
-                if($i != $totalMisc)
-                {
-                    $skillsMisc .= $comma;
-                }
+                $skillsMisc .= $comma;
             }
         }
         

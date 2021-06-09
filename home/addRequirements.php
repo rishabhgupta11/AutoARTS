@@ -199,7 +199,7 @@ if(isset($_SESSION['email']))
                     function addNewApplicationTechnology()
                     {
 
-                        var values = ["Amazon Web Services", "ASP.NET", "Android Native", "Django", "ExpressJS", "Flutter", "Flask", "Google Cloud Platform", "IBM Cloud", "iOS Native", "LAMP", "Laravel", "Microsoft Azure", "NodeJS", "Oracle", "React", "React Native", "Spring", "VMWare", "WAMP", "Xamarin", "XAMPP"];
+                        var values = ["AWS", "ASP.NET", "Android", "Django", "ExpressJS", "Flutter", "Flask", "GCP", "IBM Cloud", "iOS Native", "LAMP", "Laravel", "Azure", "NodeJS", "Oracle", "React", "React Native", "Spring", "VMWare", "WAMP", "Xamarin", "XAMPP"];
 
                         appNumber++;
 
@@ -252,7 +252,7 @@ if(isset($_SESSION['email']))
                     function addNewMiscellaneous()
                     {
 
-                        var values = ["Linux", "MS Office Suite", "SDLC Models", "Search Engine Optimization", "Shell Script", "Systems Design", "UI/UX Design"];
+                        var values = ["Linux", "MS Office", "SDLC", "SEO", "Shell Script", "Systems Design", "UI/UX Design"];
 
                         miscNumber++;
 
