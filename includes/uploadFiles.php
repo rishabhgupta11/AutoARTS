@@ -47,8 +47,14 @@ if(isset($_POST['uploadFiles']) && isset($_FILES['file'])){
 		}
 
 		//Saving Name
-		$firstname = $array[0];
-		$lastname = $array[1];
+		if($array[0] == NULL){
+			$firstname = $array[1];
+			$lastname = $array[2];
+		}
+		else{
+			$firstname = $array[0];
+			$lastname = $array[1];
+		}
 		$applicantName = $firstname." ".$lastname;
 
 		//Saving Email

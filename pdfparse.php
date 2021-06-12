@@ -3,7 +3,7 @@
 include 'vendor/autoload.php';
  
 $parser = new \Smalot\PdfParser\Parser();
-$pdf    = $parser->parseFile('ResumeA.pdf');
+$pdf    = $parser->parseFile('ResumeE.pdf');
  
 $pages  = $pdf->getPages();
  
@@ -16,6 +16,8 @@ foreach($array as $key => $value)
 {
     $array[$key] = trim($value);
 }
+
+var_dump($array);
 
 $b = preg_grep("/github.com/", $array);
 $str = implode("/", $b);
@@ -35,9 +37,14 @@ for($i=0; $i<count($array); $i++)
     }
 }
 
-
-$firstname = $array[0];
-$lastname = $array[1];
+if($array[0] == NULL){
+    $firstname = $array[1];
+    $lastname = $array[2];
+}
+else{
+    $firstname = $array[0];
+    $lastname = $array[1];
+}
 echo "<br><br>".$firstname." ".$lastname;
 
 

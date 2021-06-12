@@ -151,7 +151,7 @@ if(isset($_SESSION["email"]))
                                     <div class="container-fluid applicant-card">
                                     <br>
                                         <div class="d-flex justify-content-between align-items-center" style="padding-left:20px;padding-right:20px;">
-                                            <div class="d-flex flex-column">
+                                            <div class="d-flex flex-column" style="width:275px;">
                                                 <div class="d-flex justify-content-between">
                                                     <h5 style="color:black;"><?php echo strtoupper($row['ApplicantName']); ?></h5>
                                                     <?php
