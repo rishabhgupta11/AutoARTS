@@ -1,5 +1,5 @@
 <?php
-    $con= mysqli_connect("localhost","root","4b86XcMhd8PHQi3d","autoarts")
+    $con= mysqli_connect("ADDRESS","USERNAME","PASSWORD","DATABASE_NAME")
     or die(mysqli_error($con));
     if(!isset($_SESSION)) 
     { 

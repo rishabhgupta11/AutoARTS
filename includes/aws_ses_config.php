@@ -1,13 +1,13 @@
 <?php
 
-$sender = 'autoarts@ngenza.com';
-$senderName = 'AutoARTS';
+$sender = 'SENDER_EMAIL';
+$senderName = 'SENDER_NAME';
 
-$usernameSmtp = 'AKIAXDUT7QBNEFPWYSMI';
+$usernameSmtp = 'YOUR_SMTP_USERNAME';
 
-$passwordSmtp = 'BLAPq5ke0yvVq4SWTTNCT+iQxLU4knz+IG7bOONBLI6U';
+$passwordSmtp = 'YOUR_SMTP_PASSSWORD';
 
-$host = 'email-smtp.us-east-1.amazonaws.com';
+$host = 'YOUR_HOST';
 $port = 587;
 
 ?>

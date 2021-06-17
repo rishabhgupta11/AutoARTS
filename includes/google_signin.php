@@ -8,7 +8,7 @@ $firstname = '';
 $lastname = '';
 $emailid = '';
 $space = ' ';
-//This $_GET["code"] variable value received after user has login into their Google Account redirct to PHP script then this variable value has been received
+
 if(isset($_GET["code"]))
 {
     $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);

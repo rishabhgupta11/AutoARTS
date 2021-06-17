@@ -8,8 +8,8 @@ if (!session_id())
 }
 
 $facebook = new \Facebook\Facebook([
-  'app_id'      => '197160548504222',
-  'app_secret'     => '35b0c0a7bc098690de3accc817c7ba98',
+  'app_id'      => 'YOUR_APP_ID',
+  'app_secret'     => 'YOUR_APP_SECRET',
   'default_graph_version'  => 'v5.0'
 ]);
 

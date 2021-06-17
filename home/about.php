@@ -6,9 +6,6 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <!--<link rel='stylesheet' type='text/css' media='screen' href='main.css'>-->
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src='main.js'></script>
 </head>
 <body>
     <div class="back_img">

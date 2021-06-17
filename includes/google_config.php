@@ -4,9 +4,9 @@ require_once '../vendor/autoload.php';
 
 $google_client = new Google_Client();
 
-$google_client->setClientId('357670966951-09qd3dgu5290d370st55c9bsmb227s3g.apps.googleusercontent.com');
+$google_client->setClientId('YOUR_CLIENT_ID');
 
-$google_client->setClientSecret('bzE7_fphwhgIM8mBNyHBrdiJ');
+$google_client->setClientSecret('YOUR_CLIENT_SECRET');
 
 $google_client->setRedirectUri('http://localhost/AutoARTS/includes/google_signin.php');
 
