@@ -85,7 +85,7 @@ if(isset($_SESSION["email"]))
             <br>
             <?php
             if($total == 0){
-                echo "<center><h4>No Resumes Uploaded!</h4></center>";
+                echo "<center><h4 style='margin:100px;'>No Resumes Uploaded!</h4></center>";
             }
             else{
                 while($row = mysqli_fetch_array($result)){
